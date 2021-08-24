@@ -1,9 +1,9 @@
-def get_arg():
+def get_arg(epochs):
     ##############################################################     # 初步設定
     user = 7  # Client
 
-    round = 40  # Round
-    epochs = 5  # Epr  (Epoch per Round)
+    round = 30  # Round
+    epochs = epochs  # Epr  (Epoch per Round)
     lr = 0.01
     batch_size = 64
 
@@ -14,9 +14,9 @@ def get_arg():
     # no_cuda ( True )  = 使用cpu做training
     # no_cuda ( False ) = 使用cuda做training
 
-    mode = 2
-    # mode 1 = 開thread做Client模擬 (平行) (if gpu memory足夠)
-    # mode 2 = 使用iterator做Client模擬 (輪流)
+    mode = 'FL_iterator_Training'
+    # mode 'FL_Threading_Training' = 開thread做Client模擬 (平行) (if gpu memory足夠)
+    # mode 'FL_iterator_Training' = 使用iterator做Client模擬 (輪流)
 
     return user, round, epochs, lr, batch_size, global_model, no_cuda, mode
 ##########################################################################
