@@ -41,8 +41,8 @@ def federated_learning(epoch):
                 i.train(epochs, global_model, lr, batch_size, no_cuda)
                 global_model = i.model
 
-        # print('---Global model---')
-        # metrics, global_model = aggregator.merge(clients, no_cuda)
+        print('---Global model---')
+        metrics, global_model = aggregator.merge(clients, no_cuda)
 
     print('Train Finish')
 
